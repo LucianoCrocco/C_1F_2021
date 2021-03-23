@@ -1,0 +1,8 @@
+Crear bibliotecas para las funciones
+PedirEntero
+PedirCaracter
+PedirFlotante
+
+
+#include <stdlib.h>
+return EXIT_SUECCESS;
