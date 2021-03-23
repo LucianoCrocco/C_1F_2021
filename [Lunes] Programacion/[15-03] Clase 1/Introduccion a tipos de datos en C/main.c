@@ -1,4 +1,5 @@
 #include <stdio_ext.h> //Extension para linux, sirve para el __fpurge(stdin);
+#include <stdlib.h>
 
 int main() //Punto de acceso o entry point
 {
@@ -16,6 +17,6 @@ int main() //Punto de acceso o entry point
     printf("La edad es %d y el sexo es %c", edad, sexo);
 
 
-    return 0;
+    return EXIT_SUECCESS;
 }
 

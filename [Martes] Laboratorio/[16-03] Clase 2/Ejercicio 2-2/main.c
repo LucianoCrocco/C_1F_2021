@@ -5,6 +5,8 @@ Ejercicio 2-2
 
 *******************************************************************************/
 #include <stdio.h>
+#include <stdlib.h>
+
 #define TAM 10
 
 int main()
@@ -94,5 +96,5 @@ int main()
         printf("\nEl total del producto entre los numeros negativos es: %d",productoTotalNegativos);
     }
 
-    return 0;
+    return EXIT_SUECCESS;
 }

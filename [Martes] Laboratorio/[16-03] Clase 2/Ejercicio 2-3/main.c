@@ -6,6 +6,7 @@ Ejercicio 2-3
 *******************************************************************************/
 #include <stdio_ext.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 #define PRECIO_VIAJE 600
 #define DESCUENTO 25
@@ -103,15 +104,21 @@ int main()
             contadorMujeres++;
         }
         //EJERCICIO 2-2, LA MISMA CORRECION PUEDE SER APLICADA ACA.
+	/*
         if(i==0 && sexo == 'F'){
             auxEdadMujerJoven = edad;
             auxIdClienteMujerJoven = idCliente;
         } else {
-            if(sexo == 'F' && auxEdadMujerJoven < edad) {
+            if(sexo == 'F' && auxEdadMujerJoven > edad) {
                 auxEdadMujerJoven = edad;
                 auxIdClienteMujerJoven = idCliente;
             }
+        }*/
+        if((i==0 && sexo == 'F') || (sexo == 'F' && auxEdadMujerJoven > edad)){
+            auxEdadMujerJoven = edad;
+            auxIdClienteMujerJoven = idCliente;
         }
+
         if(edad>=60){
             contadorMayores++;
         }
@@ -144,5 +151,5 @@ int main()
     }
 
 
-    return 0;
+    return EXIT_SUECCESS;
 }

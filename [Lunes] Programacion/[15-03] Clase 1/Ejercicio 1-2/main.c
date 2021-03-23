@@ -5,6 +5,7 @@ Ejercicio 1-2
 
 *******************************************************************************/
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -28,4 +29,6 @@ int main()
     }
 
     printf("\nEl numero con la mayor denominación ingresado es: %d", numeroMaximo);
+
+    return EXIT_SUECCESS;
 }

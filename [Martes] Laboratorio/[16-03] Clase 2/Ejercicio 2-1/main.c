@@ -5,6 +5,7 @@ Ejercicio 2-1
 
 *******************************************************************************/
 #include <stdio.h>
+#include <stdlib.h>
 #define TAM 5
 #define Y "Hola World"
 
@@ -61,5 +62,5 @@ int main()
 
     printf("\nEl promedio es: %.2f", promedio);
 
-    return 0;
+    return EXIT_SUECCESS;
 }

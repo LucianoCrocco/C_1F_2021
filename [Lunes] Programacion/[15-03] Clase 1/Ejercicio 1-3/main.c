@@ -5,6 +5,7 @@ Ejercicio 1-3
 
 *******************************************************************************/
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -39,6 +40,7 @@ int main()
         }
     }
 
+    return EXIT_SUECCESS;
 
 
 
