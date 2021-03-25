@@ -1,0 +1,16 @@
+LEER EL APUNTE DE ALGORITMOS
+
+
+You can compare sorting algorithms against the following criteria:
+
+    Time Complexity (Big-O notation). You should note that best-case, worst-case and average run-time can have different time complexity. For example best-case for Bubble Sort is only O(n), making it faster than Selection Sort when the original list is mostly in order (not many elements out of place).
+
+    Memory Complexity. How much more memory is required to sort a list as n grows?
+
+    Stability. Does the sort preserve the relative ordering of elements that have equivalent sort values? (For example if you were sorting a list of catalog items by their price, some elements may have equal prices. If the catalog was originally sorted alphabetically by item name, will the chosen sort algortihm preserve the alphabetical ordering within each group of equal-priced items.)
+
+    Best/Worst/Averavge number of comparisons required. Important when compare operations are expensive. (For example: comparing efficiencies of alternative designs where efficiency is calculated via some simulation or otherwise complex calculation).
+
+    Best/Worst/Average number of swap operations required. Important when swap operations are expensive. (For example: sorting shipping containers that must be physically moved on the deck of a ship)
+
+    Code size. Bubble-sort is known for its small code footprint.
