@@ -39,6 +39,7 @@ int main(void){
 							iteraciones = simpleBubbleSortNumbs(numerosOrdenados, QTY_NUMBERS);
 							printArray(numerosOrdenados, QTY_NUMBERS, "El numero de en la posicion ");
 							printf("La cantidad de iteraciones con el metodo de burbujeo y los numeros ordenados es de: %d", iteraciones);
+							system("clear");
 							break;
 						case 2:
 							iteraciones = efficientBubbleSortNumbs(numerosOrdenados, QTY_NUMBERS);
