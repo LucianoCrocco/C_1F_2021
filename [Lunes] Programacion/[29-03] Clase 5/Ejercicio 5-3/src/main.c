@@ -15,7 +15,7 @@
 
 int main (void){
 
-	int listaNumeros[TAMANIO];
+	int listaNumeros[TAMANIO]={};
 	int posicion;
 	int numero;
 	int opcion;
@@ -31,12 +31,20 @@ int main (void){
 	do{
 		printf("¿Desea ingresar un numero? 1.Si --- 2.No: ");
 		scanf("%d",&opcion);
-		posicion=pedirPosicion("Ingrese la posicion en la cual desea cargar el numero, hay", "Error... la posicion ingresada NO es valida.", listaNumeros, TAMANIO);
 
-		numero=pedirEntero("Ingrese el numero que quiere ingresar en esa posicion: ", "Error... el numero ingresado NO es valido.",0 , 0);
+		switch(opcion){
+		case 1:
+			posicion=pedirPosicion("Ingrese la posicion en la cual desea cargar el numero, hay", "Error... la posicion ingresada NO es valida.", listaNumeros, TAMANIO);
 
-		cargarNumeroArray(listaNumeros, TAMANIO, numero, posicion);
+			numero=pedirEntero("Ingrese el numero que quiere ingresar en esa posicion: ", "Error... el numero ingresado NO es valido.",0 , 0);
 
+			cargarNumeroArray(listaNumeros, TAMANIO, numero, posicion);
+			break;
+
+		case 2:
+			printf("No sigue ingresando numeros.\n");
+			break;
+		}
 	}while(opcion!=2);
 
 	//B
@@ -44,11 +52,6 @@ int main (void){
 
 	//C
 	printsumaNegAntecesores(listaNumeros, TAMANIO);
-
-
-
-
-
 
 
 	return EXIT_SUCCESS;
