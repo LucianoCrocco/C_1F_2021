@@ -1,0 +1,24 @@
+|| -> Si una es TRUE, y las demas son false, siempre devuelta TRUE
+&& -> Si una es FALSE, y las demas son true, siempre devuelve FALSE.
+
+Con FALSE se sale del loop while;
+
+1 = true	0 = false
+var 1	|		var 2	|	var 1 && var 2
+	1		  1			1
+	1		  0			0
+	0		  1			0
+	0		  0			0
+
+var 1	|		var 2	|	var 1 || var 2
+	1		  1			1
+	1		  0			1
+	0		  1			1
+	0		  0			0
+
+Boolean('') = false
+Boolean('X') = true
+
+do {
+   X
+} while (si es true, vuelve al do, si es false rompe el loop)

@@ -1,0 +1,8 @@
+git clone "URL" (Bajar todo el repositorio)
+git status 
+git add .
+git commit -m "mensaje" 
+git push (subirlo sin especificar)
+git push origin master (subirlo pero para una branch especifica)
+git pull origin master (actualizar el repositorio)
+git log
