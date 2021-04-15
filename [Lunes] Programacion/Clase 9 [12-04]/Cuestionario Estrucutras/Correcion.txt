@@ -1,0 +1,11 @@
+Como cargo el nombre "maria"  a la variable unAlumno de tipo eAlumno?:
+unAlumno.nombre="maria" -> Usar strcpy.
+
+Como se declara el prototipo de una funcion que recibe como parametro un eAlumno?:
+1, 3 y 4.
+
+Cuales de estos prototipos son correctos para mostrar un array de eAlumno?:
+1 y 2.
+
+Donde se declara los define ?:
+En la biblioteca.h y en la main.c.
