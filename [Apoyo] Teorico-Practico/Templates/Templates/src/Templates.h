@@ -9,6 +9,14 @@
 #define TEMPLATES_H_
 
 /************************************************************************************************************/
+/************************************************MACROS UTILES***********************************************/
+/************************************************************************************************************/
+//		ESPACIO
+#define VACIO 0
+#define OCUPADO -1
+#define STRING_LENGHT 100 // lenght de mi string.
+
+/************************************************************************************************************/
 /*******************************************FUNCIONES QUE CALCULAN*******************************************/
 /************************************************************************************************************/
 
@@ -120,5 +128,126 @@ int comprobarEsNaturalFloat(float numero);
  */
 int menu(void);
 
+/************************************************************************************************************/
+/**********************************************ESTRUCTURA UNICA**********************************************/
+/************************************************************************************************************/
+
+/**
+ * @brief Hardcodea los datos de una unica estructura
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
+ */
+void hardocodearDatosUnaStruct/*EL nombre puede variar despues de DATOS*/(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Muestra el listado completo de una estrucutra
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
+ */
+void mostrarListadoEstructura(eEstructura  lista[], int lenghtArray);
+
+/**
+ * @brief Muestra un solo elemento de la estrucutura
+ *
+ * @param unElemento La posicion del array en particular del elemento que se desea mostrar
+ */
+void mostrarUnElementoEstrucutra(eEstructura unElemento);
+
+/**
+ * @brief Inicializa los datos por default de la estructura para que todos esten vacios, estandarizamos isEmpty como referencia a VACIO u OCUPADO
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
+ */
+void inicializarIsEmptyEstructura(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Comprueba y compara si un dato del INT ingresado existe dentro de la estructura.
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
+ * @param numero Recibe el dato de tipo INT a buscar.
+ * @return Rertorna el index si es verdadero o -1 si es falso.
+ */
+int comprobarDatoIntEIndex(eEstructura lista[], int lenghtArray, int numero);
+
+/**
+ * @brief Comprueba si hay espacios VACIOS dentro de la estructura. Estandarizamos la comprobacion de los datos en isEmpty.
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
+ * @return Retorna el indice del array en el cual hay un espacio VACIO, caso que no haya retorna -1.
+ */
+int comprobarEspaciosVaciosEstructura(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Comprueba si hay espacios OCUPADOS dentro de la estructura. Estandarizamos la comprobacion de los datos en isEmpty
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
+ * @return Retorna el 1 si hay un espacio OCUPADO, caso que no haya retorna -1.
+ */
+int comprobarEspaciosOcupadosEstructura(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Realiza el alta de un dato de la estructura. La utilizo en el main
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
+ */
+void altaListaEstrucutra(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Se encarga de cargar los datos de la estructura.
+ *
+ * @param lista Recibe el array de la estructura
+ * @param index Recibe el index del espacio VACIO de la estructura
+ */
+void cargarDatosEstructura(eEstructura lista[], int index);
+
+/**
+ * @brief Se encarga de dar de baja los datos de la estructura seteando el index de VACIO a OCUPADO. La utilizo en el main
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe el index del espacio VACIO de la estructura
+ */
+void bajaListaEstrucutra(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Realiza la modificacion de datos de la estructura. La utilizo en el main
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe el index del espacio VACIO de la estructura
+ */
+void modificarEstructura(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Modifica, segun el administrador, los datos de esa posicion de la estructura.
+ *
+ * @param lista Recibe el array de la estructura
+ * @param index Recibe el index donde se realizan las modificaciones.
+ */
+void modificarDatosEstructura(eEstructura lista[], int index);
+
+/************************************************************************************************************/
+/****************************************ORDENAMIENTO DE UNA ESTRUCTURA**************************************/
+/************************************************************************************************************/
+/**
+ * @brief Ordenamiento simple de una estructura con el metodo de burbujeo
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array.
+ */
+void simpleBubbleSort/*Agrego que quiero ordenar al nombre*/(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Ordenamiento simple de una estructura con el metodo de insercion
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array.
+ */
+void insertionSortNumb/*Agrego que quiero ordenar al nombre*/(eEstructura lista[], int lenghtArray);
 
 #endif /* TEMPLATES_H_ */

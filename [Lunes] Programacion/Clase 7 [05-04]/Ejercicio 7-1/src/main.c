@@ -1,7 +1,7 @@
 /*
  * Luciano Crocco 1ºF
  * Ejercicio 7-1
- *
+ *CON ARRAY PARELELOS
 Una empresa importadora que comercializa productos Apple, decide registrar de sus productos los siguientes datos:
 1 -> idProducto (numerico)
 2 -> descripcion (alfanumérico)
@@ -23,10 +23,66 @@ Realizar un programa que permita interactuar con un menú de usuarios con las si
 
 #include <stdio_ext.h>
 #include <stdlib.h>
+#include "Funciones.h"
+#define MAX_PRODUCTOS 10
+#define MAX_CADENA 30
 
 int main (void){
 
-	setbuf(stdout, NULL);
+	int idProducto[MAX_PRODUCTOS];// = {1000, 1004, 1100};
+	float nacionalidad[MAX_PRODUCTOS];//  = {10, 5.5, 7.5};
+	float tipo[MAX_PRODUCTOS];//  = {5, 10, 5.5};
+	float precio[MAX_PRODUCTOS];
+
+	//char nombres[FILAS][COLUMNAS];
+	char descripcion[MAX_PRODUCTOS][MAX_CADENA];//  = {"Juan", "Pepe", "Ana"};
+
+	int opcion;
+	int index;
+
+
+	InicializarProductos(idProducto, MAX_PRODUCTOS);
+
+	do
+	{
+		printf("1. ALTA\n");
+		printf("2. BAJA\n");
+		printf("3. MODIFICACION\n");
+		printf("4. ORDENAR y MOSTRAR\n");
+		printf("10. Salir\n");
+		printf("Elija una opcion:");
+		scanf("%d", &opcion);
+
+		switch(opcion)
+		{
+			case 1:
+
+				index = CargarUnAlumno(idProducto, nacionalidad, tipo, precio, descripcion, MAX_PRODUCTOS);
+				if(index==-1)
+				{
+					printf("No hay espacio disponible en la lista...");
+				}
+				else
+				{
+					printf("Alumno cargado con exito!!!");
+				}
+
+			break;
+			case 2:
+				askBajaAlumnos(idProducto, nacionalidad, tipo, precio, descripcion, MAX_PRODUCTOS);
+				break;
+			case 3:
+				askModificarAlumnos(idProducto, nacionalidad, tipo, precio, descripcion, MAX_PRODUCTOS);
+			break;
+			case 4:
+			   MostrarTodosLosAlumnos(idProducto, nacionalidad, tipo, precio, descripcion, MAX_PRODUCTOS);
+			break;
+			case 5:
+				break;
+			case 6:
+				break;
+		}
+	}while(opcion!=10);
 
 	return EXIT_SUCCESS;
 }
