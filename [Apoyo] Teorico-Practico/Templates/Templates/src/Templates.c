@@ -147,6 +147,21 @@ int comprobarEsNaturalFloat(float numero){
 	return retorno;
 }
 
+int comprobarNoRepiteInt(eEstrutura lista[], int lenghtArray ,int numero){
+	int i;
+	int retorno;
+
+	retorno = 1;
+
+	for(i=0;i<lenghtArray;i++){
+		if(lista[i].CONDICION==numero){
+			retorno = -1;
+			break;
+		}
+	}
+	return retorno;
+}
+
 
 /************************************************************************************************************/
 /**************************************************UTILIDADES************************************************/
@@ -166,13 +181,13 @@ int menu(void){
 /**********************************************ESTRUCTURA UNICA**********************************************/
 /************************************************************************************************************/
 
-void hardocodearDatosUnaStruct/*EL nombre puede variar despues de DATOS*/(eEstructura lista[], int lenghtArray){ //DEFINES PREDEFINIDOS: OCUPADO, VACIO, STRING_LENGHT
+void hardocodearDatosUnaStruct/*EL nombre puede variar despues de DATOS*/(eEstructura lista[]){ //DEFINES PREDEFINIDOS: OCUPADO, VACIO, STRING_LENGHT
 	int i;
 	/*			DATOS A HARDCODEAR
 	char string[lenghtArray][STRING_LENGHT]={"Cargador", "Computadora", "Tablet"};
 	int integerOFloat[lenghtArray]= {OCUPADO, OCUPADO, OCUPADO};//OCUPADO Y LIBRE SEGUN DEFINE
 */
-	for(i=0;i<lenghtArray;i++){
+	for(i=0;i<NUMERO;i++){
 		/*ASIGNAR EL HARDCODEO AL ARRAY*/
 	}
 
@@ -187,7 +202,7 @@ void mostrarListadoEstructura(eEstructura lista[], int lenghtArray){
 	}
 }
 
-void mostrarUnElementoEstrucutra(eEstructura unElemento){
+void mostrarUnElementoEstructura(eEstructura unElemento){
 	printf("printf de los elementos y sus valroes --- %15s %5d %.2f etc\n",);
 }
 
@@ -246,7 +261,7 @@ int comprobarEspaciosOcupadosEstructura(eEstructura lista[], int lenghtArray){
     return retorno;
 }
 
-void altaListaEstrucutra(eProductos lista[], int lenghtArray){
+void altaListaEstructura(eEstructura lista[], int lenghtArray){
 	int index;
 
 	index = comprobarEspaciosVaciosEstructura(lista, lenghtArray);
@@ -263,7 +278,7 @@ void cargarDatosEstructura(eEstructura lista[], int index){
 	 */
 }
 
-void bajaListaEstrucutra(eEstructura lista[], int lenghtArray){
+void bajaListaEstructura(eEstructura lista[], int lenghtArray){
 	int datoAComparar;
 	int index;
 
@@ -325,6 +340,26 @@ int simpleBubbleSort/*Agrego que quiero ordenar al nombre*/(eEstructura lista[],
 				auxiliar = lista[i];
 				lista[i] = lista[j];
 				lista[j] = auxiliar;
+			}
+		}
+	}
+}
+
+void efficientBubbleSort/*Agrego que quiero ordenar al nombre*/(eEstructura lista[], int lenghtArray){
+	int i;
+	eEstructura aux;
+	int flagNoEstaOrdenado;
+
+	flagNoEstaOrdenado = 1;
+
+	while(flagNoEstaOrdenado== 1){
+		flagNoEstaOrdenado = 0;
+		for(i=1;i<lenghtArray;i++){
+			if(/*CONDICION > CONDICION*/){
+				aux = lista[i];
+				lista[i] = lista[i-1];
+				lista[i-1] = lista[i];
+				flagNoEstaOrdenado = 1;
 			}
 		}
 	}

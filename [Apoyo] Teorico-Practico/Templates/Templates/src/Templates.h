@@ -116,6 +116,15 @@ int pedirEnteroConRango(char mensaje[], char mensajeError[], int minimo, int max
  */
 int comprobarEsNaturalFloat(float numero);
 
+/**
+ * @brief Comprueba si un numero de tipo INT se repite en una estructura
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
+ * @param numero El numero que desea comparar para saber si se repite
+ * @return Si no se repite retorna 1, si se repite retorna -1.
+ */
+int comprobarNoRepiteInt(eEstrutura lista[], int lenghtArray ,int numero);
 
 /************************************************************************************************************/
 /**************************************************UTILIDADES************************************************/
@@ -136,9 +145,8 @@ int menu(void);
  * @brief Hardcodea los datos de una unica estructura
  *
  * @param lista Recibe el array de la estructura
- * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
  */
-void hardocodearDatosUnaStruct/*EL nombre puede variar despues de DATOS*/(eEstructura lista[], int lenghtArray);
+void hardocodearDatosUnaStruct/*EL nombre puede variar despues de DATOS*/(eEstructura lista[]);
 
 /**
  * @brief Muestra el listado completo de una estrucutra
@@ -153,7 +161,7 @@ void mostrarListadoEstructura(eEstructura  lista[], int lenghtArray);
  *
  * @param unElemento La posicion del array en particular del elemento que se desea mostrar
  */
-void mostrarUnElementoEstrucutra(eEstructura unElemento);
+void mostrarUnElementoEstructura(eEstructura unElemento);
 
 /**
  * @brief Inicializa los datos por default de la estructura para que todos esten vacios, estandarizamos isEmpty como referencia a VACIO u OCUPADO
@@ -197,7 +205,7 @@ int comprobarEspaciosOcupadosEstructura(eEstructura lista[], int lenghtArray);
  * @param lista Recibe el array de la estructura
  * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
  */
-void altaListaEstrucutra(eEstructura lista[], int lenghtArray);
+void altaListaEstructura(eEstructura lista[], int lenghtArray);
 
 /**
  * @brief Se encarga de cargar los datos de la estructura.
@@ -213,7 +221,7 @@ void cargarDatosEstructura(eEstructura lista[], int index);
  * @param lista Recibe el array de la estructura
  * @param lenghtArray Recibe el index del espacio VACIO de la estructura
  */
-void bajaListaEstrucutra(eEstructura lista[], int lenghtArray);
+void bajaListaEstructura(eEstructura lista[], int lenghtArray);
 
 /**
  * @brief Realiza la modificacion de datos de la estructura. La utilizo en el main
@@ -241,6 +249,14 @@ void modificarDatosEstructura(eEstructura lista[], int index);
  * @param lenghtArray Recibe la cantidad de elementos que puede contener el array.
  */
 void simpleBubbleSort/*Agrego que quiero ordenar al nombre*/(eEstructura lista[], int lenghtArray);
+
+/**
+ * @brief Ordenamiento simple de una estructura con el metodo de burbujeo mejorado
+ *
+ * @param lista Recibe el array de la estructura
+ * @param lenghtArray Recibe la cantidad de elementos que puede contener el array.
+ */
+void efficientBubbleSort/*Agrego que quiero ordenar al nombre*/(eEstructura lista[], int lenghtArray);
 
 /**
  * @brief Ordenamiento simple de una estructura con el metodo de insercion
