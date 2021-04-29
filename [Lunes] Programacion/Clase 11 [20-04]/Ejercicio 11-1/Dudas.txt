@@ -1,0 +1,32 @@
+1) id Tipo tiene que ser el mismo en eProductos y eTiposDeProductos? -> Me parece que tengo que borrar el id de eProducto y usar la FK para cargar el dato
+
+2) Puedo usar X cantidades de for en la misma funcion funcion o si o si tengo que encontrar la manera de achicar la funcion?
+-> "Hecho"
+
+3) Para los/el maximo tengo que usar un array de X cantidad, almacenar los maximos que vaya encontrando y despues hacer una doble comprobacion? -> Hecho
+
+4) Estan bien los Switch en la funcion mostrar o son innecesarios hasta ver punteros? -> NO, poner ID Nacionalidad ID Tipo
+
+
+5) Como relaciono Nacionalidades/tipos y la estructura productos, deberia cambiar la forma de ver mis listados del principio para relacionar las 3 estructuras y mostrar los printf?
+
+6) Para el punto 9 y 10 tendria que crear nuevas funciones que muestren recibiendo dos esctructuras o hacerlo como esta hecho en el 8
+for
+(ID: 1000) PRODUCTO: SARASA
+	for
+	MostrarProductosEspecificos
+		MostrarUnProductoEspecifico
+
+O
+for
+MostrarProductosEspecificos 
+		MostrarUnProductoEspecifico
+			ID PRODUCTO:
+			DESCRIPCION:
+			((ID TIPO: 1000) PRODUCTO: SARASA)
+
+7) Tengo que cambiar la funcion del punto 4? Por que de cambiarla para recibir las 3 estructuras haría que el punto 9 sea innecesario. -> Me parece que no, debería hacerlo como aclaro en el punto 1
+
+
+Aclaraciones
+Borrar #Defines y acoplar las funciones a las nuevas estructuras 
