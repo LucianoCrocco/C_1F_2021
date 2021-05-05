@@ -58,6 +58,14 @@ float multiplicarNumerosFloat(float x, float y){
 	return resultado;
 }
 
+int generar_ID(int indexGenerado, int numeroInicializador){
+	int idRetornado;
+
+	idRetornado=i+numeroInicializador;
+
+	return idRetornado;
+
+}
 
 /************************************************************************************************************/
 /***********************************************PEDIR FUNCIONES**********************************************/
