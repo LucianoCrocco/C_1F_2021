@@ -1,0 +1,1 @@
+if(ingresarValor(&dato) == 1) es lo mismo que if(ingresarValor(&dato)) -> Es igual porque el IF valora el FALSE como 0 y TRUE todo lo demas. Como la funcion devuelve 1, el if interpreta ese 1 como TRUE, por lo tanto no hace falta poner el ==1.

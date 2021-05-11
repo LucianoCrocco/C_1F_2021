@@ -27,7 +27,7 @@ void altaEstructuraTrabajo(eTrabajo listaTrabajos[], int lenghtTrabajos, eServic
 
 	if(index != -1){
 		cargarDatosTrabajos(listaTrabajos, lenghtTrabajos, index, listaServicios, lenghtServicios);
-		puts("\nProducto cargado correctamente.");
+		puts("\Trabajo cargado correctamente.");
 	} else {
 		puts("\nNo hay espacios disponibles para cargar trabajos");
 	}

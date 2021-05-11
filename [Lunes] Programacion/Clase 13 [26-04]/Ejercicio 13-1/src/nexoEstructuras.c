@@ -15,6 +15,8 @@
 #include "eProductos.h"
 #include "nexoEstructuras.h"
 
+#define STRING_LENGHT 100
+
 /*******************************************ALTA-BAJA-MODIFICACION**********************************************/
 
 //								CASE 1

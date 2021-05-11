@@ -65,6 +65,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 2:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					saltoDeLinea(1);
@@ -81,6 +82,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 3:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					saltoDeLinea(1);
@@ -97,6 +99,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 4:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					saltoDeLinea(1);
@@ -113,6 +116,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 5:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					insertionSortNumbPrecio(listadoDeProductos, LENGHT_PRODUCTOS);
@@ -130,6 +134,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 6:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					insertionSortNumbDescripcion(listadoDeProductos, LENGHT_PRODUCTOS);
@@ -147,6 +152,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 7:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					saltoDeLinea(1);
@@ -179,6 +185,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 9:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					mostrarListadoProductosConDescTipo(listadoDeProductos,LENGHT_PRODUCTOS,listadoDeTiposProductos,LENGHT_TIPO_PRODUCTOS);
@@ -194,6 +201,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 10:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					mostrarListadoTipoProductoYProducto(listadoDeProductos,LENGHT_PRODUCTOS,listadoDeTiposProductos,LENGHT_TIPO_PRODUCTOS);
@@ -225,6 +233,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 12:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					calcularNacionalidadFabricaIphone(listadoDeProductos,LENGHT_PRODUCTOS,listadoDeTiposProductos,LENGHT_TIPO_PRODUCTOS, listadoDeNacionalidades, LENGHT_NACIONALIDADES);
@@ -240,6 +249,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 13:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					insertionSortNumbNacionalidad(listadoDeNacionalidades, LENGHT_NACIONALIDADES);
@@ -257,6 +267,7 @@ int main(void){
 					}
 				}
 				break;
+
 			case 14:
 				if(flagTipo != -1 && flagNaciones != -1 && flagProductos != -1){
 					saltoDeLinea(2);
@@ -289,10 +300,12 @@ int main(void){
 					}
 				}
 				break;
+
 			case 16:
 					altaListaEstructuraTipo(listadoDeTiposProductos, LENGHT_TIPO_PRODUCTOS);
 					flagTipo++;
 				break;
+
 			case 17:
 				if(flagTipo != -1){
 					bajaCascada = bajaListaEstructuraTipo(listadoDeTiposProductos, LENGHT_TIPO_PRODUCTOS);
@@ -301,6 +314,7 @@ int main(void){
 					printf("\n--------No hay tipos de productos cargados--------\n\n");
 				}
 				break;
+
 			case 18:
 				if(flagTipo != -1){
 					modificarTipo(listadoDeTiposProductos, LENGHT_TIPO_PRODUCTOS);
@@ -308,10 +322,12 @@ int main(void){
 					printf("\n--------No hay tipos de productos cargados--------\n\n");
 				}
 				break;
+
 			case 19:
 				altaListaEstructuraNacionalidad(listadoDeNacionalidades, LENGHT_NACIONALIDADES);
 				flagNaciones++;
 				break;
+
 			case 20:
 				if(flagNaciones != -1){
 					bajaCascada = bajaListaEstructuraNacionalidad(listadoDeNacionalidades, LENGHT_NACIONALIDADES);
@@ -320,6 +336,7 @@ int main(void){
 					printf("\n--------No hay nacionalidades cargadas--------\n\n");
 				}
 				break;
+
 			case 21:
 				if(flagNaciones != -1){
 					modificarNacionalidad(listadoDeNacionalidades, LENGHT_NACIONALIDADES);
@@ -327,6 +344,7 @@ int main(void){
 					printf("\n--------No hay nacionalidades cargadas--------\n\n");
 				}
 				break;
+
 			default:
 				printf("\nGracias por utilizar el programa.");
 				break;
