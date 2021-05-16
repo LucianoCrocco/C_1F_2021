@@ -175,7 +175,7 @@ void mostrarUnElementoEstructura(eEstructura unElemento);
 void inicializarIsEmptyEstructura(eEstructura lista[], int lenghtArray);
 
 /**
- * @brief Comprueba y compara si un dato del INT ingresado existe dentro de la estructura.
+ * @brief Comprueba si el index ingresado por el usuario pertenece a un ID dentro de la estructura.
  *
  * @param lista Recibe el array de la estructura
  * @param lenghtArray Recibe la cantidad de elementos que puede contener el array
@@ -219,7 +219,7 @@ void altaListaEstructura(eEstructura lista[], int lenghtArray);
 void cargarDatosEstructura(eEstructura lista[], int index);
 
 /**
- * @brief Se encarga de dar de baja los datos de la estructura seteando el index de VACIO a OCUPADO. La utilizo en el main
+ * @brief Se encarga de dar de baja los datos de la estructura seteando el index de OCUPADO a VACIO. La utilizo en el main
  *
  * @param lista Recibe el array de la estructura
  * @param lenghtArray Recibe el index del espacio VACIO de la estructura
