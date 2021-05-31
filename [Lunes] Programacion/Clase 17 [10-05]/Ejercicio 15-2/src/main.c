@@ -40,8 +40,9 @@ int CargarPuntero(int* pEntero) //Innecesaria xq tengo el cargarEntero
 
 	if(pEntero!=NULL)
 	{
-		CargarEntero(pEntero);
-		retorno = 1;
+		if(CargarEntero(pEntero)){
+			retorno = 1;
+		}
 	}
 
 	return retorno;
@@ -61,11 +62,12 @@ int MostrarPuntero(int* pEntero)
 
 int CargarEntero(int * pEntero){
 
-	int retorno = -1;
+	int retorno = 0;
 	if(pEntero!=NULL)
 	{
 		printf("Ingrese un entero: ");
 		scanf("%d", pEntero);
+		retorno = 1;
 	}
 
 	return retorno;
