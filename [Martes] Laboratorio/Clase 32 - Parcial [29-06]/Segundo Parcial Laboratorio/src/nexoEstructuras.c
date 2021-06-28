@@ -1,5 +1,6 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
+#include <string.h>
 #include "Piloto.h"
 #include "Vuelos.h"
 #include "nexoEstructuras.h"
@@ -30,9 +31,9 @@ void flight_ListOneFlightWithPilot(eVuelos* vuelo, ePiloto* piloto, int primeraI
 
 		if(primeraIteracion == 0){
 			printf("\n[ID VUELO]\t[ID AVION]\t  [FECHA]\t[DESTINO]\t    [DATOS PILOTO]\t [HORA DESPEGUE] [HORA LLEGADA]\t[CANTIDAD DE PASAJEROS]\n\n");
-			printf("    %02d\t\t    %02d\t\t %d/%d/%d %13s \tID:%2d  %s %s\t       %02d\t      %02d\t\t%03d\n", idVuelo, idAvion, dia, mes, anio, destino, idPiloto, nombre, apellido,horaDespegue, horaLlegada, cantPasajeros);
+			printf("    %02d\t\t    %02d\t\t %d/%d/%d %13s \tID:%2d  %s %s\t       %02d\t       %02d\t\t %03d\n", idVuelo, idAvion, dia, mes, anio, destino, idPiloto, nombre, apellido,horaDespegue, horaLlegada, cantPasajeros);
 		} else {
-			printf("    %02d\t\t    %02d\t\t %d/%d/%d %13s \tID:%2d  %s %s\t       %02d\t      %02d\t\t%03d\n", idVuelo, idAvion, dia, mes, anio, destino, idPiloto, nombre, apellido,horaDespegue, horaLlegada, cantPasajeros);
+			printf("    %02d\t\t    %02d\t\t %d/%d/%d %13s \tID:%2d  %s %s\t       %02d\t       %02d\t\t %03d\n", idVuelo, idAvion, dia, mes, anio, destino, idPiloto, nombre, apellido,horaDespegue, horaLlegada, cantPasajeros);
 		}
 	}
 }
@@ -62,4 +63,40 @@ int piloto_findIndexPilotoByFlightID(LinkedList* pArrayListPilotos, int idVuelo_
 	}
 
 	return rtn;
+}
+
+
+int cantidadDePasajeros (void* pElement){
+	int rtn = -1;
+	int acumulador = 0;
+	eVuelos* e1;
+
+	if(pElement != NULL){
+		rtn = 1;
+		e1 = pElement;
+		acumulador = e1->cantPasajeros;
+		return acumulador;
+	}
+
+	return rtn;
+
+}
+
+int cantidadDePasajerosAChina (void* pElement){
+	int rtn = -1;
+	int acumulador = 0;
+	eVuelos* e1;
+
+	if(pElement != NULL){
+		rtn = 1;
+		e1 = pElement;
+
+		if(strcmp(e1->destino,"China") == 0){
+			acumulador = e1->cantPasajeros;
+		}
+		return acumulador;
+	}
+
+	return rtn;
+
 }

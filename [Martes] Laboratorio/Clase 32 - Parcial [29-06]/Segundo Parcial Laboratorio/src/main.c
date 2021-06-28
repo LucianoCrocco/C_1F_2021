@@ -17,6 +17,12 @@ int main(void){
 
 	controller_ListVuelos(listaVuelos, listaPilotos);
 
+	int cantidadPasajeros = ll_count(listaVuelos, cantidadDePasajeros);
+	int cantidadPasajerosAChina =  ll_count(listaVuelos, cantidadDePasajerosAChina);
+
+	printf("\n%d", cantidadPasajeros);
+	printf("\n%d", cantidadPasajerosAChina);
+
 
 	return EXIT_SUCCESS;
 }

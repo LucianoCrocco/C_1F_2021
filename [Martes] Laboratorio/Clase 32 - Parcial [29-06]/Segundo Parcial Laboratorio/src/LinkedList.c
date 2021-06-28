@@ -588,7 +588,7 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 
     	if(ll_isEmpty(this) == 0){
     		for(i=0;i<len-1;i++){
-				//pElementOne = ll_get(this, i); Por que no funcionaria si lo posiciono aca?
+				//pElementOne = ll_get(this, i); Por que no funcionaria si lo posiciono aca? -> pq intercambias direccion de memoria y se pierde la referencia.
     			for(j=i+1;j<len;j++){
     				pElementOne = ll_get(this, i);
     				pElementTwo = ll_get(this, j);
@@ -632,5 +632,28 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 */
     return returnAux;
 
+}
+
+int ll_count(LinkedList* this, int (*fn)(void* element)){
+	int returnAux = -1;
+	int acumulador = 0;
+	int i;
+	int len = ll_len(this);
+
+	if(this != NULL && fn != NULL){
+		returnAux = 0;
+		if(ll_isEmpty(this) == 0){
+			returnAux = 1;
+			void* pElement;
+			for(i=0;i<len;i++){
+				pElement = ll_get(this,i);
+				acumulador += fn(pElement);
+			}
+		}
+	} else {
+		return returnAux;
+	}
+
+	return acumulador;
 }
 
