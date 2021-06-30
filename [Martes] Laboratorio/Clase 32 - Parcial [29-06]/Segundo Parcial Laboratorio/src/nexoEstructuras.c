@@ -7,6 +7,12 @@
 #include "LinkedList.h"
 
 
+/**
+ * \brief Lista un vuelo conlos datos del piloto
+ * \param vuelo
+ * \param piloto
+ * \param primeraIteracion
+ */
 void flight_ListOneFlightWithPilot(eVuelos* vuelo, ePiloto* piloto, int primeraIteracion){
 
 	if(vuelo != NULL && piloto != NULL){
@@ -65,7 +71,37 @@ int piloto_findIndexPilotoByFlightID(LinkedList* pArrayListPilotos, int idVuelo_
 	return rtn;
 }
 
+/**
+ * \brief Cuenta la cantidad de pasajeros segun el criterio elegido en las opciones.
+ * \param pArrayListVuelos
+ * \param opcion
+ * \return
+ */
+int contadorDePasajeros (LinkedList* pArrayListVuelos, int opcion){
+	int rtn = 0;
+	if(pArrayListVuelos != NULL && opcion > -1){
+		rtn = 1;
+		int cantidadPasajeros;
+		int cantidadPasajerosAChina;
+		switch(opcion){
+			case 1:
+				cantidadPasajeros = ll_count(pArrayListVuelos, cantidadDePasajeros);
+				printf("\n\n[\tLa cantidad total de pasajeros cargados en el sistema es de: %d\t]", cantidadPasajeros);
+				break;
+			default:
+				cantidadPasajerosAChina =  ll_count(pArrayListVuelos, cantidadDePasajerosAChina);
+				printf("\n\n[\tLa cantidad total de pasajeros cargados en el sistema que viajan a china es de: %d\t]", cantidadPasajerosAChina);
+				break;
+		}
+	}
+	return rtn;
+}
 
+/**
+ * \brief Contador de cantidad de pasajeros
+ * \param pElement
+ * \return
+ */
 int cantidadDePasajeros (void* pElement){
 	int rtn = -1;
 	int acumulador = 0;
@@ -82,6 +118,11 @@ int cantidadDePasajeros (void* pElement){
 
 }
 
+/**
+ * \brief contador de cantidad de pasajeros a China
+ * \param pElement
+ * \return
+ */
 int cantidadDePasajerosAChina (void* pElement){
 	int rtn = -1;
 	int acumulador = 0;
@@ -100,3 +141,48 @@ int cantidadDePasajerosAChina (void* pElement){
 	return rtn;
 
 }
+
+
+int vuelo_mayorACincoHoras (void* pElement){
+	int rtn = -1;
+	int resultado;
+
+	eVuelos* e1;
+
+	if(pElement != NULL){
+		rtn = 1;
+		e1 = pElement;
+
+		resultado = e1->horaLlegada - e1->horaDespegue;
+
+		if(resultado < 6){
+			rtn = 0;
+		}
+	}
+
+	return rtn;
+}
+
+
+int filrar_pilotos (void* pElement){
+	int rtn = -1;
+	ePiloto* e1;
+
+
+	if(pElement != NULL){
+		rtn = 1;
+		e1 = pElement;
+
+		if(strcmp(e1->nombre, "Alex") == 0 && strcmp (e1->apellido, "Lifeson") == 0){
+			rtn = 0;
+		} else if (strcmp(e1->nombre, "Richard") == 0 && strcmp (e1->apellido, "Bach") == 0){
+			rtn = 0;
+		}
+	}
+
+	return rtn;
+}
+
+
+
+

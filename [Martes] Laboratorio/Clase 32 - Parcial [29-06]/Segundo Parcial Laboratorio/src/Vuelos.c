@@ -17,9 +17,16 @@ eVuelos* vuelo_new(){
 
 /**
  * \brief Constructor parametrizado, parsea los datos y los devuelve para añadirlos a la linked list
- * \param idStr ID leido del .csv
- * \param nombreStr Nombre leido del .csv
- * \param ApelldioStr Apellido leido del .csv
+ * \param idVueloStr leido del .csv
+ * \param idAvionStr leido del .csv
+ * \param idPilotoStr leido del .csv
+ * \param diaStr leido del .csv
+ * \param mesStr leido del .csv
+ * \param anioStr leido del .csv
+ * \param destinoStr leido del .csv
+ * \param cantPasajerosStr leido del .csv
+ * \param horaDespegueStr leido del .csv
+ * \param horaLlegadaStr leido del .csv
  * \return Retorna el elemento parametrizado
  */
 eVuelos* vuelo_newParametros(char* idVueloStr, char* idAvionStr, char* idPilotoStr, char* diaStr, char* mesStr, char* anioStr, char* destinoStr, char* cantPasajerosStr,char* horaDespegueStr,char* horaLlegadaStr){
@@ -159,9 +166,9 @@ int vuelo_getIdPiloto(eVuelos* this,int* id){
 }
 
 /**
- * \brief Setea el ID de mi elemento
+ * \brief Setea la fecha de mi elemento
  * \param this
- * \param id
+ * \param dia
  * \return 1 bien 0 NULL
  */
 
@@ -178,9 +185,9 @@ int vuelo_setFechaDia(eVuelos* this,int dia){
 }
 
 /**
- * \brief Devuelve el id de mi elemento
+ * \brief Devuelve la fecha de mi elemento
  * \param this
- * \param id Direccion de memoria a setear el campo del elemento
+ * \param dia Direccion de memoria a setear el campo del elemento
  * \return 1 bien 0 NULL
  */
 int vuelo_getFechaDia(eVuelos* this,int* dia){
@@ -196,9 +203,9 @@ int vuelo_getFechaDia(eVuelos* this,int* dia){
 }
 
 /**
- * \brief Setea el ID de mi elemento
+ * \brief Setea la fecha de mi elemento
  * \param this
- * \param id
+ * \param mes
  * \return 1 bien 0 NULL
  */
 
@@ -215,9 +222,9 @@ int vuelo_setFechaMes(eVuelos* this,int mes){
 }
 
 /**
- * \brief Devuelve el id de mi elemento
+ * \brief Devuelve la fecha de mi elemento
  * \param this
- * \param id Direccion de memoria a setear el campo del elemento
+ * \param mes Direccion de memoria a setear el campo del elemento
  * \return 1 bien 0 NULL
  */
 int vuelo_getFechaMes(eVuelos* this,int* mes){
@@ -233,9 +240,9 @@ int vuelo_getFechaMes(eVuelos* this,int* mes){
 }
 
 /**
- * \brief Setea el ID de mi elemento
+ * \brief Setea la fecha de mi elemento
  * \param this
- * \param id
+ * \param anio
  * \return 1 bien 0 NULL
  */
 
@@ -252,9 +259,9 @@ int vuelo_setFechaAnio(eVuelos* this,int anio){
 }
 
 /**
- * \brief Devuelve el id de mi elemento
+ * \brief Devuelve la fecha de mi elemento
  * \param this
- * \param id Direccion de memoria a setear el campo del elemento
+ * \param anio Direccion de memoria a setear el campo del elemento
  * \return 1 bien 0 NULL
  */
 int vuelo_getFechaAnio(eVuelos* this,int* anio){
@@ -271,9 +278,9 @@ int vuelo_getFechaAnio(eVuelos* this,int* anio){
 
 
 /**
- * \brief Setea el nombre de mi elemento
+ * \brief Setea el destino de mi elemento
  * \param this
- * \param nombre
+ * \param destino
  * \return 1 bien 0 NULL
  */
 int vuelo_setDestino(eVuelos* this,char* destino){
@@ -288,9 +295,9 @@ int vuelo_setDestino(eVuelos* this,char* destino){
 	return rtn;
 }
 /**
- * \brief Devuelve el nombre de mi elemento
+ * \brief Devuelve el destino de mi elemento
  * \param this
- * \param nombre Direccion de memoria a setear el campo del elemento
+ * \param destino Direccion de memoria a setear el campo del elemento
  * \return 1 bien 0 NULL
  */
 int vuelo_getDestino(eVuelos* this,char* destino){
@@ -305,7 +312,12 @@ int vuelo_getDestino(eVuelos* this,char* destino){
 	return rtn;
 
 }
-
+/**
+ * \brief Setea la cantidad de pasajeros de mi elemento
+ * \param this
+ * \param cantidad
+ * \return
+ */
 int vuelo_setCantPasajeros(eVuelos* this,int cantidad){
 
 	int rtn = 0;
@@ -317,6 +329,13 @@ int vuelo_setCantPasajeros(eVuelos* this,int cantidad){
 
 	return rtn;
 }
+
+/**
+ * \brief Devuelve la cantidad de pasajeros de mi elemento
+ * \param this
+ * \param cantidad Direccion de memoria a setear el campo del elemento
+ * \return 1 bien 0 NULL
+ */
 int vuelo_getCantPasajeros(eVuelos* this,int* cantidad){
 
 	int rtn = 0;
@@ -330,9 +349,9 @@ int vuelo_getCantPasajeros(eVuelos* this,int* cantidad){
 }
 
 /**
- * \brief Setea el ID de mi elemento
+ * \brief Setea la hora de despegue de mi elemento
  * \param this
- * \param id
+ * \param horaDespegue
  * \return 1 bien 0 NULL
  */
 
@@ -349,9 +368,9 @@ int vuelo_setHoraDespegue(eVuelos* this,int horaDespegue){
 }
 
 /**
- * \brief Devuelve el id de mi elemento
+ * \brief Devuelve la hora de despegue de mi elemento
  * \param this
- * \param id Direccion de memoria a setear el campo del elemento
+ * \param horaDespegue Direccion de memoria a setear el campo del elemento
  * \return 1 bien 0 NULL
  */
 int vuelo_getHoraDespegue(eVuelos* this,int* horaDespegue){
@@ -368,9 +387,9 @@ int vuelo_getHoraDespegue(eVuelos* this,int* horaDespegue){
 
 
 /**
- * \brief Setea el ID de mi elemento
+ * \brief Setea la hora de llegada de mi elemento
  * \param this
- * \param id
+ * \param horaLlegada
  * \return 1 bien 0 NULL
  */
 
@@ -387,9 +406,9 @@ int vuelo_setHoraLlegada(eVuelos* this,int horaLlegada){
 }
 
 /**
- * \brief Devuelve el id de mi elemento
+ * \brief Devuelve la hora de llegada de mi elemento
  * \param this
- * \param id Direccion de memoria a setear el campo del elemento
+ * \param horaLlegada Direccion de memoria a setear el campo del elemento
  * \return 1 bien 0 NULL
  */
 int vuelo_getHoraLlegada(eVuelos* this,int* horaLlegada){
@@ -406,12 +425,19 @@ int vuelo_getHoraLlegada(eVuelos* this,int* horaLlegada){
 
 
 /**
- * \brief Setea todos los campos de mi elemento
+ * \brief Setea todos los atributos de mi campo elementos
  * \param this
- * \param id
- * \param nombre
- * \param apellido
- * \return 1 bien 0 NULL
+ * \param idVuelo
+ * \param idAvion
+ * \param idPiloto
+ * \param dia
+ * \param mes
+ * \param anio
+ * \param destino
+ * \param cantPasajeros
+ * \param horaDespegue
+ * \param horaLlegada
+ * \return
  */
 int vuelos_setAllAtributes(eVuelos* this, int idVuelo, int idAvion, int idPiloto, int dia, int mes, int anio, char* destino, int cantPasajeros, int horaDespegue, int horaLlegada){
 	int rtn = 1;
@@ -459,14 +485,20 @@ int vuelos_setAllAtributes(eVuelos* this, int idVuelo, int idAvion, int idPiloto
 }
 
 /**
- * \brief Devuelve todos los campos mi elemento
+ * \brief Devuelve todos los atributos de mis campos elementos
  * \param this
- * \param id Direccion de memoria a setear el campo del elemento
- * \param nombre Direccion de memoria a setear el campo del elemento
- * \param apellido Direccion de memoria a setear el campo del elemento
- * \return 1 bien 0 NULL
+ * \param idVuelo
+ * \param idAvion
+ * \param idPiloto
+ * \param dia
+ * \param mes
+ * \param anio
+ * \param destino
+ * \param cantPasajeros
+ * \param horaDespegue
+ * \param horaLlegada
+ * \return
  */
-
 int vuelos_getAllAtributes(eVuelos* this, int* idVuelo, int* idAvion, int* idPiloto, int* dia, int* mes, int* anio, char* destino, int* cantPasajeros,int* horaDespegue, int* horaLlegada){
 	int rtn = 1;
 
@@ -488,14 +520,12 @@ int vuelos_getAllAtributes(eVuelos* this, int* idVuelo, int* idAvion, int* idPil
 			rtn = 0;
 		}
 
-
 		if(vuelo_getFechaMes(this, mes) == 0 && rtn == 1){
 			rtn = 0;
 		}
 		if(vuelo_getFechaAnio(this, anio) == 0 && rtn == 1){
 			rtn = 0;
 		}
-
 
 		if(vuelo_getDestino(this, destino) == 0 && rtn == 1){
 			rtn = 0;

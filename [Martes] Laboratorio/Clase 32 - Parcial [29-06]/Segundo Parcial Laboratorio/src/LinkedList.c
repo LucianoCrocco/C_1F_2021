@@ -230,14 +230,6 @@ int ll_set(LinkedList* this, int index,void* pElement)
 int ll_remove(LinkedList* this,int index)//ESTA FUNCION HACE ROMPER EL LL_CONTAINSALL
 {
     int returnAux = -1;
-
-    /*El error es en esta funcion, por eso mostraba el mensaje 1 vez, el case 2 nunca llegaba a ejecutarse por un error en esta funcion.
-      Basicamente si eliminaba un nodo en el index 0 y hacia que la siguiente condicion rompiese el programa.
-		pNode = getNode(this, index);
-		pAuxNode = getNode(this, index-1); -> Linea que deberia romper el programa si mi index es 0.
-		pAuxNode->pNextNode=getNode(this, index+1);
-
-    */
    if(this != NULL && index > -1){
     	int len = ll_len(this);
         Node* pNode = NULL;
@@ -263,25 +255,6 @@ int ll_remove(LinkedList* this,int index)//ESTA FUNCION HACE ROMPER EL LL_CONTAI
         }
 
 	}
-    /*if(this != NULL && index > -1){
-        int len = ll_len(this);
-        Node* pNode = NULL;
-        Node* pAuxNode = NULL;
-
-        if(index < len){
-        	if(len == 1){
-        		pNode = getNode(this, index);
-        		this->pFirstNode = NULL;
-        	} else {
-        		pNode = getNode(this, index);
-        		pAuxNode = getNode(this, index-1);
-        		pAuxNode->pNextNode=getNode(this, index+1);
-        	}
-        	free(pNode);
-			this->size--;
-			returnAux = 0;
-        }
-    }*/
 
     return returnAux;
 }
@@ -577,18 +550,12 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
     	int i;
     	int j;
     	int len = ll_len(this);
-    	//void* pAux = NULL;//Si no uso un auxiliar, al pisar la funcion no estaria apuntando a distantas direccion pero los elementos no serian los mismos? -> No, ya que antes con los ll_get pido esos elementos en mis void* pElement
-    	/* Tengo 3 posiciones de memoria, entonces cuando hago un ll_set no hago que el puntero pElement apunte a otra posicion de memoria pero el valor original de ese pELement tiene la misma posicion de memoria y no desapareico
-    	 * Por eso la utilizacion del pAux es inutil, ya que no se piso mi direccion de memoria con su valor, solo cambie la direccion.
-    	 *
-    	 */
     	int condicion;
     	void* pElementOne;
 		void* pElementTwo;
 
     	if(ll_isEmpty(this) == 0){
     		for(i=0;i<len-1;i++){
-				//pElementOne = ll_get(this, i); Por que no funcionaria si lo posiciono aca? -> pq intercambias direccion de memoria y se pierde la referencia.
     			for(j=i+1;j<len;j++){
     				pElementOne = ll_get(this, i);
     				pElementTwo = ll_get(this, j);
@@ -603,37 +570,16 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
     	}
     }
 
-
-
-/*
-    if(this != NULL && pFunc != NULL && (order == 0 || order == 1)){// 0 Descendente || 1 Ascendente
-    	int i;
-    	int j;
-    	if(ll_isEmpty(this) == 0){
-			int len = ll_len(this);
-    		for(i=0;i<len-1;i++){
-    			for(j=i;j<len;j++){
-    				void* pElementOne = ll_get(this, i);
-    				void* pElementTwo = ll_get(this, j);
-    				if(order == 1 && pFunc(pElementOne, pElementTwo) == 1){
-    					ll_set(this, j, pElementOne);
-    					ll_set(this, i, pElementTwo);
-    				} else {
-						if(order == 0 && pFunc(pElementOne, pElementTwo) == -1){
-							ll_set(this, i, pElementTwo);
-							ll_set(this, j, pElementOne);
-						}
-    				}
-    			}
-    		}
-    		returnAux = 0;
-    	}
-    }
-*/
     return returnAux;
 
 }
 
+/**
+ * \brief Contador que recibe una linked list y un puntero a funcion, acumula segun lo que se le pase a la funcion y lo devuelve.
+ * \param this
+ * \param fn
+ * \return
+ */
 int ll_count(LinkedList* this, int (*fn)(void* element)){
 	int returnAux = -1;
 	int acumulador = 0;
@@ -647,7 +593,9 @@ int ll_count(LinkedList* this, int (*fn)(void* element)){
 			void* pElement;
 			for(i=0;i<len;i++){
 				pElement = ll_get(this,i);
-				acumulador += fn(pElement);
+				if(pElement != NULL){
+					acumulador += fn(pElement);
+				}
 			}
 		}
 	} else {
@@ -657,3 +605,27 @@ int ll_count(LinkedList* this, int (*fn)(void* element)){
 	return acumulador;
 }
 
+LinkedList* ll_filter(LinkedList* this, int (*fn)(void* element)){
+
+	LinkedList* newLinkedList = ll_newLinkedList();
+
+	if(this != NULL && fn != NULL){
+
+		if(newLinkedList != NULL){
+			int i;
+			int len = ll_len(this);
+			void* pElement;
+
+			for(i=0;i<len;i++){
+				pElement = ll_get(this,i);
+				if(pElement != NULL){
+					if(fn(pElement) == 1){
+						ll_add(newLinkedList, pElement);
+					}
+				}
+			}
+		}
+	}
+
+	return newLinkedList;
+}

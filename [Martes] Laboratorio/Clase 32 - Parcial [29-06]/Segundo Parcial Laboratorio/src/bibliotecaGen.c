@@ -28,18 +28,16 @@ int menu(int* pResult){
 	if(pResult != NULL){
 		printf("\t\t[OPCIONES]\n");
 
-		printf("1. Cargar los datos de los empleados (modo texto)\n");
-		printf("2. Cargar los datos de los empleados (modo binario)\n");
-		printf("3. Alta de empleado\n");
-		printf("4. Modificar datos de empleado\n");
-		printf("5. Baja de empleado.\n");
-		printf("6. Listar empleados.\n");
-		printf("7. Ordenar empleados.\n");
-		printf("8. Guardar los datos de los empleados en el archivo (modo texto).\n");
-		printf("9. Guardar los datos de los empleados en el archivo (modo binario).\n");
-		printf("10. Salir\n");
-
-		if(pedirEnteroConRango(pResult,"Ingrese una opcion: ", "Error...Ingrese una opcion valida", 1, 10, 5) == 0){
+		printf("1. Cargar los datos de los Pilotos (modo texto)\n");
+		printf("2. Cargar los datos de los Vuelos (modo texto)\n");
+		printf("3. Imprimir vuelos\n");
+		printf("4. Cantidad de pasajeros\n");
+		printf("5. Cantidad de pasajeros a China.\n");
+		printf("6. Crear archivo con vuelos de mas de 5 horas.\n");
+		printf("7. Listar vuelos a portugal.\n");
+		printf("8. Listar vuelos sin Alex Lifeson y Richard Bach.\n");
+		printf("9. Salir.\n");
+		if(get_Integer(pResult,"Ingrese una opcion: ", "Error...Ingrese una opcion valida", 1, 9, 5) == 0){
 			puts("\nEror al cargar la opcion ingresada\n");
 			return 0;
 		}
@@ -451,12 +449,12 @@ int get_Integer(int* pResultado, char* mensaje, char* mensajeError, int minimo, 
 					} else {
 						numero = atoi(buffer);
 						if(numero < minimo){
-							printf("%s Ingreso un numero menor al minimo\n", mensajeError);
+							printf("%s Ingreso un numero menor al minimo\n, reintentos restantes: %d", mensajeError, reintentos);
 							reintentos--;
 							validacion = 0;
 						} else {
 							if(numero > maximo){
-								printf("%s Ingreso un numero mayor al maximo\n", mensajeError);
+								printf("%s Ingreso un numero mayor al maximo, reintentos restantes: %d\n", mensajeError, reintentos);
 								reintentos --;
 								validacion = 0;
 							} else {
@@ -603,12 +601,12 @@ int get_Float(float* pResultado, char* mensaje, char* mensajeError, float minimo
 					} else {
 						numero = atof(buffer);
 						if(numero < minimo){
-							printf("%s Ingreso un numero menor al minimo\n", mensajeError);
+							printf("%s Ingreso un numero menor al minimo, reintentos restantes: %d\n", mensajeError, reintentos);
 							reintentos--;
 							validacion = 0;
 						} else {
 							if(numero > maximo){
-								printf("%s Ingreso un numero mayor al maximo\n", mensajeError);
+								printf("%s Ingreso un numero mayor al maximo, reintentos restantes: %d\n", mensajeError, reintentos);
 								reintentos --;
 								validacion = 0;
 							} else {
