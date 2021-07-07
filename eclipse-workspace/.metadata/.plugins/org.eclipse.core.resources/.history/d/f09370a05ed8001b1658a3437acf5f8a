@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+	setbuf(stdout,NULL);
+
+	/*			PUNTO 1
+	 *
+	 */
+
+	/*			PUNTO 2
+	 *
+	 */
+
+
+	/*			PUNTO 3
+	 *
+	 */
+
+	return EXIT_SUCCESS;
+}

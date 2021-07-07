@@ -1,0 +1,33 @@
+/*
+ * cafetera.c
+ *
+ *  Created on: 28 jun. 2021
+ *      Author: luciano
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "cafetera.h"
+
+eCafetera* cafetera_new(void){
+	eCafetera* newCafetera;
+
+	newCafetera = (eCafetera*) malloc(sizeof(eCafetera));
+
+	return newCafetera;
+}
+
+eCafetera* cafetera_newParametros(int id, char* marca, int esMultiCapsula){
+
+	eCafetera* newCafetera;
+
+	newCafetera = cafetera_new();
+
+	if(newCafetera != NULL && id > -1 && marca != NULL && esMultiCapsula > -1){
+		newCafetera->id=id;
+		strcpy(newCafetera->marca, marca);
+		newCafetera->esMultiCapsula = esMultiCapsula;
+	}
+
+	return newCafetera;
+}

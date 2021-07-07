@@ -1,0 +1,25 @@
+/*
+ * Vuelos.h
+ *
+ *  Created on: 27 jun. 2021
+ *      Author: luciano
+ */
+
+#ifndef VUELOS_H_
+#define VUELOS_H_
+
+typedef struct{
+	int dia;
+	int mes;
+	int anio;
+};
+
+typedef struct {
+	int idVuelo;
+	int idAvion;
+	int idPiloto; //FK
+
+}eVuelos;
+
+
+#endif /* VUELOS_H_ */

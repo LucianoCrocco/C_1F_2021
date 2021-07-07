@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int id;
+    char marca[30];
+    int esMultiCapsula;
+}eCafetera;
+
+eCafetera* cafetera_newParametros(int id, char* marca, int esMultiCapsula);
+eCafetera* cafetera_new(void);
+
+int cargarYMostrarBinario(char* path, void* pElement){
+
+    if(pElement != NULL){
+    	eCafetera* newCafeteraLectura = cafetera_new();
+		FILE* pFileLectura;
+		pFileLectura = fopen("cafetera.dab", "rb");
+
+		if(pFileLectura != NULL && newCafeteraLectura != NULL){
+
+			while(!feof(pFileLectura)){
+				fread(newCafeteraLectura,sizeof(eCafetera),1,pFileLectura);
+				printf("\n\n%d---%s---%d\n\n",newCafeteraLectura->id, newCafeteraLectura->marca, newCafeteraLectura->esMultiCapsula);
+			}
+			fclose(pFileLectura);
+		} else {
+			puts("\nError al cargar el archivo");
+			free(newCafeteraLectura);
+		}
+    } else {
+    	puts("\nNo hay memoria para asignarle al archivo binarios\n");
+    }
+
+}

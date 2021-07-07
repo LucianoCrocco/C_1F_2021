@@ -1,0 +1,20 @@
+/******************************************************************************
+
+Alumno: Luciano Agustin Crocco
+Divison: F
+Fecha: 28/07/2021
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    setbuf(stdout,NULL);
+    printf("Hello World");
+
+
+    return EXIT_SUCCESS;
+}
+
+

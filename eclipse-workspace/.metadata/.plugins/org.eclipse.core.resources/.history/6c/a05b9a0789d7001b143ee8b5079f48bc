@@ -1,0 +1,34 @@
+/*
+ * Vuelos.h
+ *
+ *  Created on: 27 jun. 2021
+ *      Author: luciano
+ */
+
+#ifndef VUELOS_H_
+#define VUELOS_H_
+
+#define STRING_LENGHT_VUELOS 60
+
+typedef struct{
+	int dia;
+	int mes;
+	int anio;
+}eFecha;
+
+typedef struct {
+	int idVuelo;
+	int idAvion;
+	int idPiloto; //FK
+	eFecha fecha;
+	char destino[STRING_LENGHT_VUELOS];
+	int horaDespegue;
+	int horaLlegada;
+}eVuelos;
+
+eVuelos* vuelo_new();
+eVuelos* vuelo_newParametros(char* idVueloStr, char* idAvionStr, char* idPilotoStr, char* diaStr, char* mesStr, char* anioStr, char* destinoStr,char* horaDespegueStr,char* horaLlegadaStr);
+void vuelo_delete(eVuelos* this);
+
+
+#endif /* VUELOS_H_ */

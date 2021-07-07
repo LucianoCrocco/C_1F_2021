@@ -1,0 +1,6 @@
+16:33:46 **** Incremental Build of configuration Debug for project Biblioteca Nueva ****
+make all 
+make: No se hace nada para 'all'.
+
+16:33:46 Build Finished. 0 errors, 0 warnings. (took 412ms)
+

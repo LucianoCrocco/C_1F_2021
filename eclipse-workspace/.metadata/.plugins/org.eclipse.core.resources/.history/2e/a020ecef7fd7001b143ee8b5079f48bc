@@ -1,0 +1,18 @@
+/*
+ * Pilot.h
+ *
+ *  Created on: 27 jun. 2021
+ *      Author: luciano
+ */
+
+#ifndef PILOT_H_
+#define PILOT_H_
+
+typedef struct {
+	int id;
+	char nombre[];
+	char apellido[];
+}ePilot;
+
+
+#endif /* PILOT_H_ */

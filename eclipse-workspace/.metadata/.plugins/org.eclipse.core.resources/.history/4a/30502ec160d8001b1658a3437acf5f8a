@@ -1,0 +1,59 @@
+/******************************************************************************
+
+Alumno: Luciano Agustin Crocco
+Divison: F
+Fecha: 28/07/2021
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include "cafetera.h"
+
+int main()
+{
+    setbuf(stdout,NULL);
+    printf("Hello World");
+
+    eCafetera* newCafetera;
+	eCafetera* newCafeteraLectura;
+
+	//FUNCION 1
+    newCafetera = cafetera_newParametros(1, "Pepito", 1);
+
+    if(newCafetera != NULL){
+		FILE* pFile;
+
+		pFile=fopen("cafetera.dab","wb");
+
+		fwrite(newCafetera, sizeof(eCafetera),1,pFile);
+
+		fclose(pFile);
+
+    } else {
+    	puts("\n\nNo hay memoria para cargar y guardar el dato de cafetera\n");
+    }
+
+    //FUNCION 2
+    newCafeteraLectura = cafetera_new();
+
+    if(newCafetera != NULL){
+		FILE* pFileLectura;
+		pFileLectura = fopen("cafetera.dab", "rb");
+
+		if(pFileLectura != NULL && newCafeteraLectura != NULL){
+
+			while(!feof(pFileLectura)){
+				fread(newCafeteraLectura,sizeof(eCafetera),1,pFileLectura);
+				printf("%d---%s---%d",newCafeteraLectura->id, newCafeteraLectura->marca, newCafeteraLectura->esMultiCapsula);
+			}
+			fclose(pFileLectura);
+		} else {
+			puts("\nError al cargar el archivo o al ")
+		}
+
+    }
+
+    return EXIT_SUCCESS;
+}
+
+

@@ -1,0 +1,24 @@
+/******************************************************************************
+
+Alumno: Luciano Agustin Crocco
+Divison: F
+Fecha: 28/07/2021
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include "cafetera.h"
+
+int main()
+{
+    setbuf(stdout,NULL);
+    printf("Hello World");
+
+    FILE* pFile;
+
+    pFile=fopen("cafetera.dab","wb");
+
+    return EXIT_SUCCESS;
+}
+
+

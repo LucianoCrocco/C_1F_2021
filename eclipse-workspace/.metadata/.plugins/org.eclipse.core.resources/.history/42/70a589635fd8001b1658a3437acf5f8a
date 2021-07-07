@@ -1,0 +1,18 @@
+/*
+ * cafetera.c
+ *
+ *  Created on: 28 jun. 2021
+ *      Author: luciano
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "cafetera.h"
+
+eCafetera* cafetera_new(void){
+	eCafetera* newCafetera;
+
+	newCafetera = (eCafetera*) malloc(sizeof(eCafetera));
+
+	return newCafetera;
+}

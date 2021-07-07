@@ -1,0 +1,6 @@
+00:31:18 **** Incremental Build of configuration Debug for project Test ll_contains ****
+make all 
+make: No se hace nada para 'all'.
+
+00:31:19 Build Finished. 0 errors, 0 warnings. (took 412ms)
+

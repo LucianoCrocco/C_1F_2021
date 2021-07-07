@@ -1,0 +1,13 @@
+#ifndef NEXOESTRUCTURAS_H_
+#define NEXOESTRUCTURAS_H_
+#include "Piloto.h"
+#include "Vuelos.h"
+#include "nexoEstructuras.h"
+#include "LinkedList.h"
+
+#define STRING_LENGHT_NEXO 100
+
+void flight_ListOneFlightWithPilot(eVuelos* vuelo, ePiloto* piloto, int primeraIteracion);
+void* piloto_findPilotoByFlightID(LinkedList* pArrayListPilotos, int idVuelo_Piloto);
+
+#endif /* NEXOESTRUCTURAS_H_ */

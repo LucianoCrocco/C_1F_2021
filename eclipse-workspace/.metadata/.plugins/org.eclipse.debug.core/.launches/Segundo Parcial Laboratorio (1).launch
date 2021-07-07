@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.cdt.docker.launcher.launchConfigurationType">
+    <stringAttribute key="org.eclipse.cdt.docker.launcher.connection_uri" value="unix:///var/run/docker.sock"/>
+    <stringAttribute key="org.eclipse.cdt.docker.launcher.image" value="miubuntudocker:1.1"/>
+    <booleanAttribute key="org.eclipse.cdt.docker.launcher.keep_after_launch" value="false"/>
+    <stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="gdb"/>
+    <booleanAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_ON_FORK" value="false"/>
+    <stringAttribute key="org.eclipse.cdt.dsf.gdb.GDB_INIT" value=".gdbinit"/>
+    <booleanAttribute key="org.eclipse.cdt.dsf.gdb.NON_STOP" value="false"/>
+    <booleanAttribute key="org.eclipse.cdt.dsf.gdb.REVERSE" value="false"/>
+    <stringAttribute key="org.eclipse.cdt.dsf.gdb.TRACEPOINT_MODE" value="TP_NORMAL_ONLY"/>
+    <booleanAttribute key="org.eclipse.cdt.dsf.gdb.UPDATE_THREADLIST_ON_SUSPEND" value="false"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/Segundo Parcial Laboratorio"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="Segundo Parcial Laboratorio"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/Segundo Parcial Laboratorio/Debug/Segundo Parcial Laboratorio"/>
+        <listEntry value="/Segundo Parcial Laboratorio"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+        <listEntry value="4"/>
+    </listAttribute>
+    <stringAttribute key="process_factory_id" value="org.eclipse.cdt.dsf.gdb.GdbProcessFactory"/>
+</launchConfiguration>

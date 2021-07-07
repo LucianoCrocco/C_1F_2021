@@ -1,0 +1,67 @@
+/******************************************************************************
+
+Alumno: Luciano Agustin Crocco
+Divison: F
+Fecha: 28/07/2021
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include "cafetera.h"
+
+int main()
+{
+    setbuf(stdout,NULL);
+
+    eCafetera* newCafetera;
+	eCafetera* newCafeteraLectura;
+
+	//FUNCION 1
+    newCafetera = cafetera_newParametros(1, "Pepito", 1);
+
+    if(newCafetera != NULL){
+		FILE* pFile;
+
+		pFile=fopen("cafetera.dab","wb");
+
+		fwrite(newCafetera, sizeof(eCafetera),1,pFile);
+
+		fclose(pFile);
+
+    } else {
+    	puts("\n\nNo hay memoria para cargar y guardar el dato de cafetera\n");
+    }
+
+    //FUNCION 2
+    newCafeteraLectura = cafetera_new();
+
+    if(newCafeteraLectura != NULL){
+    	if(cargaYMostrarBinario("cafetera.dab", newCafeteraLectura) == 0){
+    		printf("\n\nError al cargar el archivo");
+    	} else {
+    		printf("\n\nArchivo cargado correctamente");
+    	}
+    }
+   /* if(newCafeteraLectura != NULL){
+		FILE* pFileLectura;
+		pFileLectura = fopen("cafetera.dab", "rb");
+
+		if(pFileLectura != NULL && newCafeteraLectura != NULL){
+
+			while(!feof(pFileLectura)){
+				fread(newCafeteraLectura,sizeof(eCafetera),1,pFileLectura);
+				printf("\n\n%d---%s---%d\n\n",newCafeteraLectura->id, newCafeteraLectura->marca, newCafeteraLectura->esMultiCapsula);
+			}
+			fclose(pFileLectura);
+		} else {
+			puts("\nError al cargar el archivo");
+			free(newCafeteraLectura);
+		}
+    } else {
+    	puts("\nNo hay memoria para asignarle al archivo binarios\n");
+    }*/
+
+    return EXIT_SUCCESS;
+}
+
+

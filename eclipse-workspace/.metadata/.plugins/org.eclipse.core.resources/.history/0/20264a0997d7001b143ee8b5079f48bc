@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Piloto.h"
+#include "Vuelos.h"
+
+/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListEmployee LinkedList*
+ * \return int
+ *
+ */
+int parser_PilotsFromText(FILE* pFile , LinkedList* pArrayListPilots)
+{
+
+	char id[15];
+	char nombre[128];
+	char apellido[128];
+	ePiloto* auxPiloto;
+
+	int flag = 0;
+
+	if(pFile != NULL && pArrayListPilots != NULL){
+
+		while(!feof(pFile)){
+			if(flag == 0){
+				fscanf(pFile,"%[^,],%[^,],%[^\n]\n", id, nombre, apellido);
+				flag++;
+			} else {
+
+				fscanf(pFile,"%[^,],%[^,],%[^\n]\n", id, nombre, apellido);
+
+				auxPiloto=piloto_newParametros(id, nombre, apellido);
+
+				if(auxPiloto != NULL){
+					ll_add(pArrayListPilots, auxPiloto);
+				} else {
+					return 0;
+				}
+
+
+			}
+		}
+	} else {
+		return 0;
+	}
+
+    return 1;
+}
+
+
+/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListEmployee LinkedList*
+ * \return int
+ *
+ */
+int parser_VuelosFromText(FILE* pFile , LinkedList* pArrayListVuelos)
+{
+
+	char idVuelo[15];
+	char idAvion[15];
+	char idPiloto[15];
+	char dia[15];
+	char mes[15];
+	char anio[15];
+	char destino[128];
+	char horaDespegue[15];
+	char horaLlegada[15];
+	char fecha[15];
+
+	eVuelos* auxVuelo;
+
+	int flag = 0;
+
+	if(pFile != NULL && pArrayListVuelos != NULL){
+
+		while(!feof(pFile)){
+			if(flag == 0){
+				fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", idVuelo, idAvion, idPiloto, fecha, destino, horaDespegue, horaLlegada);
+				flag++;
+			} else {
+
+				fscanf(pFile,"%[^,],%[^,],%[^,],%[^/]/%[^/]/%[^,],%[^,],%[^,],%[^\n]\n", idVuelo, idAvion, idPiloto, dia, mes, anio, destino, horaDespegue, horaLlegada);
+
+				auxVuelo=vuelo_newParametros(idVuelo, idAvion, idPiloto, dia, mes, anio, destino, horaDespegue, horaLlegada);
+				printf("%d---%d---%d---%d---%d---%d---%d---%s---%d---%d\n\n", auxVuelo->idVuelo, auxVuelo->idAvion, auxVuelo->idPiloto, auxVuelo->fecha.dia, auxVuelo->fecha.mes, auxVuelo->fecha.anio, auxVuelo->destino, auxVuelo->horaDespegue, auxVuelo->horaLlegada);
+
+				if(auxVuelo != NULL){
+					ll_add(pArrayListVuelos, auxVuelo);
+				} else {
+					return 0;
+				}
+
+
+			}
+		}
+	} else {
+		return 0;
+	}
+
+    return 1;
+}

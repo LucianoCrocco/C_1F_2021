@@ -1,0 +1,7 @@
+#ifndef NEXOESTRUCTURAS_H_
+#define NEXOESTRUCTURAS_H_
+
+#define STRING_LENGHT 100
+
+
+#endif /* NEXOESTRUCTURAS_H_ */

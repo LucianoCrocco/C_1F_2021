@@ -1,0 +1,26 @@
+/*
+ * cafetera.h
+ *
+ *  Created on: 28 jun. 2021
+ *      Author: luciano
+ */
+
+#ifndef CAFETERA_H_
+#define CAFETERA_H_
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct {
+    int id;
+    char marca[30];
+    int esMultiCapsula;
+}eCafetera;
+
+eCafetera* cafetera_new(void);
+eCafetera* cafetera_newParametros(int id, char* marca, int esMultiCapsula);
+
+
+
+#endif /* CAFETERA_H_ */

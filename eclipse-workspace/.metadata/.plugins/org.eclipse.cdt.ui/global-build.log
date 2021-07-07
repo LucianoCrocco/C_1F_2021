@@ -1,0 +1,335 @@
+19:51:59 **** Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building file: ../src/LinkedList.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LinkedList.d" -MT"src/LinkedList.o" -o "src/LinkedList.o" "../src/LinkedList.c"
+Finished building: ../src/LinkedList.c
+ 
+Building file: ../src/Piloto.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Piloto.d" -MT"src/Piloto.o" -o "src/Piloto.o" "../src/Piloto.c"
+Finished building: ../src/Piloto.c
+ 
+Building file: ../src/Vuelos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Vuelos.d" -MT"src/Vuelos.o" -o "src/Vuelos.o" "../src/Vuelos.c"
+Finished building: ../src/Vuelos.c
+ 
+Building file: ../src/bibliotecaGen.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/bibliotecaGen.d" -MT"src/bibliotecaGen.o" -o "src/bibliotecaGen.o" "../src/bibliotecaGen.c"
+Finished building: ../src/bibliotecaGen.c
+ 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function ‘main’:
+../src/main.c:19:34: warning: initialization of ‘LinkedList *’ {aka ‘struct LinkedList *’} from incompatible pointer type ‘LinkedList * (*)(void)’ {aka ‘struct LinkedList * (*)(void)’} [-Wincompatible-pointer-types]
+   19 |  LinkedList* listadoSinPilotos = ll_newLinkedList;
+      |                                  ^~~~~~~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building file: ../src/nexoEstructuras.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/nexoEstructuras.d" -MT"src/nexoEstructuras.o" -o "src/nexoEstructuras.o" "../src/nexoEstructuras.c"
+Finished building: ../src/nexoEstructuras.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.o" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+19:52:16 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+19:54:34 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+19:54:58 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+../src/Controller.c:177:5: error: conflicting types for ‘controller_ListSinDosPilotos’
+  177 | int controller_ListSinDosPilotos(LinkedList* pArrayListVuelos, LinkedList* pArrayListPilotos)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/Controller.c:5:
+../src/Controller.h:23:5: note: previous declaration of ‘controller_ListSinDosPilotos’ was here
+   23 | int controller_ListSinDosPilotos(LinkedList* pArrayListNew, LinkedList* pArrayListVuelos, LinkedList* pArrayListPilotos);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Controller.c: In function ‘controller_ListSinDosPilotos’:
+../src/Controller.c:188:62: error: ‘pArrayListNew’ undeclared (first use in this function); did you mean ‘pArrayListVuelos’?
+  188 |  if(pArrayListVuelos != NULL && pArrayListPilotos != NULL && pArrayListNew != NULL){
+      |                                                              ^~~~~~~~~~~~~
+      |                                                              pArrayListVuelos
+../src/Controller.c:188:62: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:41: src/Controller.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:55:39 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+19:55:59 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+19:57:33 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+19:59:41 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+20:13:38 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+20:13:39 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+20:14:10 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+20:14:37 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+20:14:39 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+20:14:51 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+20:14:54 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+20:15:22 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+20:15:24 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+21:13:23 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+21:15:20 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+21:22:50 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Vuelos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Vuelos.d" -MT"src/Vuelos.o" -o "src/Vuelos.o" "../src/Vuelos.c"
+Finished building: ../src/Vuelos.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+21:30:17 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/Controller.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Controller.d" -MT"src/Controller.o" -o "src/Controller.o" "../src/Controller.c"
+Finished building: ../src/Controller.c
+ 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+21:30:19 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+21:30:39 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+21:30:41 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+21:30:50 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+21:30:51 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+21:31:04 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+21:31:05 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+make: No se hace nada para 'all'.
+18:23:47 **** Build of configuration Debug for project TP3 ****
+make all 
+make: No se hace nada para 'all'.
+15:35:45 **** Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/LinkedList.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LinkedList.d" -MT"src/LinkedList.o" -o "src/LinkedList.o" "../src/LinkedList.c"
+Finished building: ../src/LinkedList.c
+ 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 
+15:38:38 **** Incremental Build of configuration Debug for project Segundo Parcial Laboratorio ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: Segundo Parcial Laboratorio
+Invoking: GCC C Linker
+gcc  -o "Segundo Parcial Laboratorio"  ./src/Controller.o ./src/LinkedList.o ./src/Piloto.o ./src/Vuelos.o ./src/bibliotecaGen.o ./src/main.o ./src/nexoEstructuras.o ./src/parser.o   
+Finished building target: Segundo Parcial Laboratorio
+ 

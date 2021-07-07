@@ -1,0 +1,15 @@
+02:16:26 **** Incremental Build of configuration Debug for project Trabajo-Practico-2 ****
+make all 
+Building file: ../src/Utilities.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Utilities.d" -MT"src/Utilities.o" -o "src/Utilities.o" "../src/Utilities.c"
+Finished building: ../src/Utilities.c
+ 
+Building target: Trabajo-Practico-2
+Invoking: GCC C Linker
+gcc  -o "Trabajo-Practico-2"  ./src/Utilities.o ./src/eEmployee.o ./src/main.o   
+Finished building target: Trabajo-Practico-2
+ 
+
+02:16:26 Build Finished. 0 errors, 0 warnings. (took 491ms)
+

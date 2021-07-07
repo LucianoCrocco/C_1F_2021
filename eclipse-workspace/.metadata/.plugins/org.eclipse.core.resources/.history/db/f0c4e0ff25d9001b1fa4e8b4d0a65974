@@ -1,0 +1,136 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "parser.h"
+#include "Controller.h"
+#include "bibliotecaGen.h"
+#include "nexoEstructuras.h"
+
+
+/** \brief Carga los datos de los vuelos desde el archivo csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListVuelos LinkedList*
+ * \return int
+ *
+ */
+int controller_loadFromTextVuelos(char* path , LinkedList* pArrayListVuelos)
+{
+	FILE* pFile;
+
+	int rtn = 0;
+
+	pFile=fopen(path,"r");
+
+	if(pFile != NULL){
+		rtn = parser_VuelosFromText(pFile, pArrayListVuelos);
+	}
+
+	fclose(pFile);
+
+    return rtn;
+}
+
+/** \brief Carga los datos de los pilotos desde el archivo csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListPilotos LinkedList*
+ * \return int
+ *
+ */
+int controller_loadFromTextPilotos(char* path , LinkedList* pArrayListPilotos)
+{
+	FILE* pFile;
+
+	int rtn = 0;
+
+	if(path != NULL && pArrayListPilotos != NULL){
+		pFile=fopen(path,"r");
+
+		if(pFile != NULL){
+			rtn = parser_PilotsFromText(pFile, pArrayListPilotos);
+		}
+
+		fclose(pFile);
+	}
+
+    return rtn;
+}
+
+
+
+/** \brief Lista los vuelos con sus pilotos
+ *
+ * \param pArrayListVuelos LinkedList*
+ * \param pArrayListPilotos LinkedList*
+ * \return int
+ *
+ */
+int controller_ListVuelos(LinkedList* pArrayListVuelos, LinkedList* pArrayListPilotos)
+{
+	int i;
+	int rtn = 0;
+	int len = ll_len(pArrayListVuelos);
+
+	eVuelos* auxVuelos = NULL;
+	ePiloto* auxPilotos = NULL;
+	int indexPiloto;
+
+	if(pArrayListVuelos != NULL && pArrayListPilotos != NULL){
+		rtn = 1;
+
+		for(i=0;i<len;i++){
+			if(i==0){
+				printf("\n\t\tLISTA DE VUELOS\n");
+			}
+
+			auxVuelos = (eVuelos*) ll_get(pArrayListVuelos, i);
+			indexPiloto = piloto_findIndexPilotoByFlightID(pArrayListPilotos, auxVuelos->idPiloto);
+			auxPilotos = (ePiloto*) ll_get(pArrayListPilotos, indexPiloto);
+
+			flight_ListOneFlightWithPilot(auxVuelos, auxPilotos, i);
+		}
+	}
+
+    return rtn;
+}
+
+
+int controller_saveAsTextVuelosMayoresACincoHoras(char* path , LinkedList* pArrayListVuelos)
+{
+	FILE* pFile;
+
+	int len;
+	int i;
+
+	len = ll_len(pArrayListVuelos);
+	eVuelos* auxVuelo;
+
+	pFile=fopen(path,"w");
+
+	if(pFile != NULL){
+		int id;
+		char nombre[STRING_LENGHT];
+		int horasTrabajadas;
+		int sueldo;
+
+
+		fprintf(pFile,"id,nombre,horasTrabajadas,sueldo\n");
+
+		for(i=0;i<len;i++){//Para que no escriba los header del csv
+			auxEmployee=ll_get(pArrayListEmployee, i);
+
+			employee_getAllAtributes(auxEmployee, &id, nombre, &horasTrabajadas, &sueldo);
+
+			fprintf(pFile,"%d,%s,%d,%d\n", id, nombre, horasTrabajadas, sueldo);
+		}
+	} else {
+		return 0;
+	}
+
+	fclose(pFile);
+
+    return 1;
+}
+
+

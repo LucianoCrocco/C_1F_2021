@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int id;
+    char marca[30];
+    int esMultiCapsula;
+}eCafetera;
+
+eCafetera* cafetera_newParametros(int id, char* marca, int esMultiCapsula);
