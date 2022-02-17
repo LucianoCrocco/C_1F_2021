@@ -1,1 +1,2 @@
-# -1F-2021-programacion_1_laboratorio_1_2021
+# Lengujae C - 1F 2021
+Profesor/es: German Scarafilo. Asignaturas: Programación 1 y Laboratorio 1
